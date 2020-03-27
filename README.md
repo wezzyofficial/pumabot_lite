@@ -3,6 +3,8 @@
 </p>
 <hr>
 
+Инструкция: vk.com/@wezzyofficial-ustanovka-i-nastroika-bot-puma-lite
+
 ## Установка
 1) Установим зависимости:
    
