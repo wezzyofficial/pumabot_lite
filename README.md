@@ -21,7 +21,7 @@
    
    Новейшая версия:
    ```sh
-   git clone https://github.com/wezzyoffical/pumabot_lite.git
+   git clone https://github.com/wezzyofficial/pumabot_lite.git
    ```
    
 4) Запуск бота:
