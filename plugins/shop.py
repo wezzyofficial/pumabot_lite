@@ -8,7 +8,7 @@ def shop(sourceText, id):
     get_data = gf.loadjson(users_dir + str(id) + ".json")
     user_balance = int(get_data['balance'])
 
-    shopHelp = ', помощь по магазину:\n\n⠀🛒 Покупайте различное имущество в один клик! После покупки дома, вы сможете преобрести транспорт и ферму для майнинга биткоинов.\n\n📌 Основное:\n⠀⠀🏠 Дома\n⠀⠀🚗 Машины\n⠀⠀✈ Самолёты\n⠀⠀🚁 Вертолёты\n⠀⠀🛥 Яхты\n⠀⠀⚒ Шахта\n⠀⠀🐼 Питомцы\n\n💡 Остальное:\n⠀⠀🖥 Компьютеры\n⠀⠀📱 Телефоны\n⠀⠀🔋 Фермы\n\n❓ Помощь:\n⠀⠀🔎 Магазин [категория] - товары.\n⠀⠀🛒 Магазин [категория] [номер] - купить товар.'
+    shopHelp = ', помощь по магазину:\n\n⠀🛒 Покупайте различное имущество в один клик! После покупки дома, вы сможете преобрести транспорт и ферму для майнинга биткоинов.\n\n📌 Основное:\n⠀⠀🏠 Дома\n⠀⠀🚗 Машины\n⠀⠀✈ Самолёты\n⠀⠀🚁 Вертолёты\n⠀⠀🛥 Яхты\n\n💡 Остальное:\n⠀⠀🖥 Компьютеры\n⠀⠀📱 Телефоны\n⠀⠀🔋 Фермы\n\n❓ Помощь:\n⠀⠀🔎 Магазин [категория] - товары.\n⠀⠀🛒 Магазин [категория] [номер] - купить товар.'
 
     if sourceText != '':
         if 'магазин' == sourceText.split()[0].lower():
@@ -25,8 +25,6 @@ def shop(sourceText, id):
                     return ', список доступных вертолётов:\n\n⠀🔔 Покупайте транспорт в один клик!\n\n⠀⠀🚁 1. Eurocopter EC130/135/14 — 1.300.000€\n⠀⠀🚁 2. Boeing MH-6 — 1.750.000€\n⠀⠀🚁 3. Sikorsky UH-60 — 2.225.000€\n⠀⠀🚁 4. HAVOK — NAGASAKI — 3.500.000€\n⠀⠀🚁 5. Eurocopter EC145 — 8.850.000€\n⠀⠀🚁 6. Airbus H160 — 25.555.555€\n⠀⠀🚁 7. Mil Mi-24 — 58.000.000€\n⠀⠀🚁 8. POLICE MAVERICK — 215.000.000€\n⠀⠀🚁 9. MAVERICK — 525.000.000€\n\n❓ Для покупки транспорта, используйте:\n⠀⠀🛒 Магазин вертолёт [номер]'
                 elif sourceText.split()[1].lower() in ['ферма', 'фермы']:
                     return ', список доступных ферм:\n\n⠀🔔 После покупки фермы, вы сможете майнить биткоины!\n\n⠀⠀🔋 1. Miner (5฿/день) — 500.000€\n⠀⠀🔋 2. Miner S (50฿/день) — 5.000.000€\n⠀⠀🔋 3. Miner X (1 000฿/день) — 500.000.000€\n\n❓ Для покупки фермы, используйте:\n⠀⠀🛒 Магазин ферма [номер]'
-                elif sourceText.split()[1].lower() in ['питомец', 'животное', 'питомцы']:
-                    return ', список доступных питомцев:\n\n⠀🔔 Покупайте питомцев в один клик!\n\n⠀⠀🐹 1. Мышь — 55.000€\n⠀⠀🐢 2. Черепаха — 125.000€\n⠀⠀🐙 3. Спрут — 450.000€\n⠀⠀🐈 4. Оцелот — 1.150.000€\n⠀⠀🐯 5. Тигр — 5.650.000€\n⠀⠀🦜 6. Попугаи — 15.000.000€\n⠀⠀🦈 7. Акула — 21.000.000€\n⠀⠀🐼 8. Панда — 38.000.000€\n⠀⠀🦊 9. Лиса — 55.000.000€\n⠀⠀🐲 10. Дракон — 1.000.000.000€\n\n❓ Для покупки питомца, используйте:\n⠀⠀🛒 Магазин питомец [номер]'
                 elif sourceText.split()[1].lower() in ['комп', 'компьютер', 'ноут', 'ноутбук', 'компы', 'компьютеры', 'ноуты', 'ноутбуки']:
                     return ', список доступных компьютеров:\n\n⠀🔔 После покупки компьютера, вы сможете производить взломы!\n\n⠀⠀🖥 1. Book — 35.000.000€\n⠀⠀🖥 2. Book Air — 45.000.000€\n⠀⠀🖥 3. Book Pro — 150.000.000€\n\n❓ Для покупки компьютера, используйте:\n⠀⠀🛒 Магазин компьютер [номер]'
                 elif sourceText.split()[1].lower() in ['телефон', 'смартфон', 'телефоны', 'смартфоны']:
@@ -1207,199 +1205,6 @@ def shop(sourceText, id):
                                     return ', у вас уже есть смартфон! 😉'
                             else:
                                 return ', смартфона с таким ID не существует! 😔'
-                    else:
-                        return ', символы и буквы запрещены! 😔'
-                elif sourceText.split()[1].lower() in ['питомец', 'животное', 'питомцы']:
-                    own_housing = int(get_data['own_housing'])
-                    pet_id = int(get_data['pet_id'])
-                    price_pet_1 = 5000
-                    price_pet_2 = 25000
-                    price_pet_3 = 50000
-                    price_pet_4 = 150000
-                    price_pet_5 = 650000
-                    price_pet_6 = 2000000
-                    price_pet_7 = 8000000
-                    price_pet_8 = 20000000
-                    price_pet_9 = 75000000
-                    price_pet_10 = 1000000000
-
-                    if id_own.isdigit():
-                        if own_housing >= 1 or own_housing != 30:
-                            if int(id_own) == 1:
-                                if pet_id == 0:
-                                    if price_pet_1 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_1
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐹 Мышь за ' + str(price_pet_1) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 2:
-                                if pet_id == 0:
-                                    if price_pet_2 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_2
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐢 Черепаху за ' + str(price_pet_2) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-
-                            elif int(id_own) == 3:
-                                if pet_id == 0:
-                                    if price_pet_3 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_3
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐙 Спрута за ' + str(price_pet_3) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 4:
-                                if pet_id == 0:
-                                    if price_pet_4 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_4
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐈 Оцелота за ' + str(price_pet_4) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 5:
-                                if pet_id == 0:
-                                    if price_pet_5 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_5
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐯 Тигра за ' + str(price_pet_5) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 6:
-                                if pet_id == 0:
-                                    if price_pet_6 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_6
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🦜 Попугая за ' + str(price_pet_6) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 7:
-                                if pet_id == 0:
-                                    if price_pet_7 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_7
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🦈 Акулу за ' + str(price_pet_7) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 8:
-                                if pet_id == 0:
-                                    if price_pet_8 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_8
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐼 Панду за ' + str(price_pet_8) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 9:
-                                if pet_id == 0:
-                                    if price_pet_9 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_9
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🦊 Лису за ' + str(price_pet_9) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            elif int(id_own) == 10:
-                                if pet_id == 0:
-                                    if price_pet_10 <= user_balance:
-                                        get_data = gf.loadjson(users_dir + str(id) + ".json")
-                                        algo_buy_own = user_balance - price_pet_10
-                                        get_data.update({"balance": '{}'.format(algo_buy_own)})
-                                        get_data.update({"pet_id": '{}'.format(id_own)})
-                                        get_data.update({"pet_joy": '{}'.format(100)})
-                                        get_data.update({"pet_satiety": '{}'.format(100)})
-                                        get_data.update({"pet_lvl": '{}'.format(1)})
-                                        get_data.update({"pet_pohod_time": '{}'.format(0.0)})
-                                        gf.dumpjson(get_data, users_dir + str(id) + ".json")
-                                        return ', вы успешно преобрели - 🐲 Дракона за ' + str(price_pet_10) + '€!\n💰 Ваш баланс: ' + str(algo_buy_own) + '€'
-                                    else:
-                                        return ', у вас недостаточно денег! 😔'
-                                else:
-                                    return ', у вас уже есть питомец! 😉'
-                            else:
-                                return ', питомца с таким ID не существует! 😔'
-                        else:
-                            return ', для покупки питомца необходим дом! 😉'
                     else:
                         return ', символы и буквы запрещены! 😔'
                 else:
