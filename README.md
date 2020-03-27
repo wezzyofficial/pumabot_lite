@@ -1,4 +1,3 @@
-# pumabot_lite
 <h1 align="center">PumaBot Lite - игровой чат-бот для ВКонтакте на Python</h1>
     <blockquote>Напишите "помощь" что бы узнать мои возможности.</blockquote>
 </p>
