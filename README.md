@@ -10,7 +10,7 @@
    
    Необходим Python 3.8:
    ```sh
-   pip3.8 install vkbottle, requests, lxml, vk_api, beautifulsoup4
+   pip3.8 install vkbottle requests lxml vk_api beautifulsoup4
    ```
 2) Установим Git Clone:
    
